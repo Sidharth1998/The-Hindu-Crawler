@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>News Blaster</title>
+	<style type="text/css">
+		header ul {
+			align-content: center;
+			margin-left: 15%;
+		}
+		header ul li {
+			display: inline;
+			margin-right: 10%;
+		}
+		header ul li a{
+			text-decoration: none;
+			color: navy;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<ul>
+			<li><a href="{{ url_for('showCatNews', category1=categories[0][0]) }}">Front Page</a></li>
+			<li><a href="{{ url_for('showCatNews', category1=categories[1][0]) }}">International</a></li>
+			<li><a href="{{ url_for('showCatNews', category1=categories[2][0]) }}">Business</a></li>
+			<li><a href="{{ url_for('showCatNews', category1=categories[3][0]) }}">National</a></li>
+			<li><a href="{{ url_for('showCatNews', category1=categories[4][0]) }}">Sport</a></li>
+		</ul>
+	</header>
+	<hr>
+	<h1>Today's News</h1>
+	<div class="content">
+		<h3>News of {{ date.strftime('%Y-%m-%d') }}</h3>
+		{% for new in news %}
+		{% if new.date==date %}
+			<h3>Article: {{ new.article }}</h3>
+			{% if new.category=="Today's Paper" %}
+			<h4>Category: Front Page News</h4>
+			{% else %}
+			<h4>Category: {{ new.category }}</h4>
+			{% endif %}
+			<p><b>Content:</b> {{ new.content }}</p>
+			<p><b>Note:</b> The link to news is <a href="{{ new.link }}"></a>"{{ new.link }}"</p>
+			<hr>
+		{% endif %}
+		{% endfor %}
+	</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+header ul {
+	width: 100%;
+	background-color: black;
+}
+header ul li a{
+	width: 20%;
+	padding: 3px;
+	color: white;
+}
