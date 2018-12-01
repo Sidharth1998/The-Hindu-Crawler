@@ -11,5 +11,5 @@ Then after setting up flask, you just have to got the directory where you have s
 to run the crawler and
 `$ python project.py`
 to run the website.
-The website is hosted on local host so if you type ####0.0.0.0:8000
+The website is hosted on local host so if you type ### 0.0.0.0:8000
 you will see the contents.
