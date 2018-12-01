@@ -4,7 +4,7 @@ The crawler will crawl the "The Hindu" newspaper website and search for the pres
 
 To run this project you will have to first download flask in your system. You can do it by:
 `$ pip install flask` or
-`$ conda install flask`
+`$ conda install flask`(if you have anaconda)
 
 Then after setting up flask, you just have to got the directory where you have stored the files and type command 
 `$ python HinduCrawler.py` 
